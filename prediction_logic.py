@@ -5,10 +5,10 @@ import random
 import nltk
 from nltk.stem import WordNetLemmatizer
 import random
-3
+
 lemmatizer=WordNetLemmatizer()
 
-data=json.load(open('archive (2)/intent.json'))
+data=json.load(open('archive/Intent.json'))
 features=pickle.load(open('features.pkl','rb'))
 model=pickle.load(open('chatbot_model.pkl','rb'))
 result_map=pickle.load(open('result_map.pkl','rb'))
