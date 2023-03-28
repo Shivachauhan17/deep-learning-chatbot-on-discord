@@ -5,12 +5,14 @@ import random
 import nltk
 from nltk.stem import WordNetLemmatizer
 import random
+from keras.models import load_model
+
 
 lemmatizer=WordNetLemmatizer()
 
 data=json.load(open('archive/Intent.json'))
 features=pickle.load(open('features.pkl','rb'))
-model=pickle.load(open('chatbot_model.pkl','rb'))
+model=load_model('chatbot_model.h5')
 result_map=pickle.load(open('result_map.pkl','rb'))
 
 
@@ -37,6 +39,5 @@ def predict(sent):
         if i['intent']==intent:
             return random.choice(i['responses'])
     
-
 
     

@@ -1,8 +1,8 @@
 
 import discord
 import prediction_logic
-client=discord.Client(intents=discord.Intents.default())
 
+client=discord.Client(intents=discord.Intents.default())
 
 
 @client.event
@@ -14,8 +14,8 @@ async def on_message(message):
         if message.author == client.user:
            return
         print('replied')
-        reply=prediction_logic.predict(message)
-        await message.channel.send(reply)
+        
+        await message.channel.send(prediction_logic.predict(str(message)))
 
-client.run('MTA4ODA5MjgwMDQ0NjM4NjE4Nw.GRxAzj.sVFWtqTv4d9ABgl2I1ljPl0cWvla9aOoYbHzbs')
+client.run('MTA4ODA5MjgwMDQ0NjM4NjE4Nw.GIZSWm.5tKzFawaXvJmklUpM5-NIe_CAbwKW0hBZr0NVo')
 

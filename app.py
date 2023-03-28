@@ -11,8 +11,7 @@ def home():
 def output():
     if request.method == 'POST':
         sentence=request.form['question']
-        print(sentence)
-        p=prediction_logic.predict(sentence)
+        p=prediction_logic.predict(str(sentence))
         return render_template('index.html',answer=p)
 
 if __name__ == "__main__":
